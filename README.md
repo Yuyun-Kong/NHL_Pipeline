@@ -1,144 +1,73 @@
-{
- "cells": [
-  {
-   "cell_type": "markdown",
-   "id": "e88737ae-81c1-4b4a-ac6d-ad27be35131f",
-   "metadata": {},
-   "source": [
-    "# NHL Pipeline Project\n",
-    "\n",
-    "## Overview\n",
-    "This project transforms raw National Hockey League (NHL) game data into **Team DNA Profiles** — data-driven representations of how teams play and evolve across seasons.  \n",
-    "\n",
-    "By integrating multiple datasets, the project identifies distinct **Team Archetypes**:  \n",
-    "- **Attackers**  \n",
-    "- **Defenders**  \n",
-    "- **Strategists**  \n",
-    "- **Balancers**  \n",
-    "\n",
-    "These archetypes are defined using key performance metrics such as efficiency, defense, and aggressiveness.  \n",
-    "\n",
-    "The outcome is an **interactive visualization** that highlights how team styles shift over time and how different archetypes influence success.  \n",
-    "\n",
-    "Data was consolidated, cleaned, and modeled using **Microsoft Fabric** and the **Medallion architecture**, demonstrating skills in **data pipeline design, ETL, and data modeling**.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## Project Structure\n"
-   ]
-  },
-  {
-   "cell_type": "raw",
-   "id": "b9314a57-438e-428e-8851-574047e775d7",
-   "metadata": {},
-   "source": [
-    "NHL_Pipeline/\n",
-    "├── notebooks/\n",
-    "│ ├── 01_silver_layer_data_cleaning_pyspark.ipynb\n",
-    "│ ├── 02_gold_layer_table_creation_sparksql.ipynb\n",
-    "├── docs/\n",
-    "│ └── project_documentation.pdf\n",
-    "├── reports/\n",
-    "│ └── powerbi_dashboard_screenshots/\n",
-    "│ └── Power BI report.pdf\n",
-    "└── README.md"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "6ff2de5e-4e76-4c85-824f-11c16282a0be",
-   "metadata": {},
-   "source": [
-    "\n",
-    "- **notebooks/** – Jupyter notebooks for Silver layer cleaning and Gold layer table creation.  \n",
-    "- **docs/** – Detailed project documentation.  \n",
-    "- **reports/** – Power BI screenshots showcasing team archetypes and season trends.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## Datasets\n",
-    "\n",
-    "- **Raw datasets** were manually uploaded to **Microsoft Fabric Lakehouse**.  \n",
-    "- Due to large size, they are not included in this repository.  \n",
-    "- They can be downloaded from Kaggle:  \n",
-    "  - [NHL Game Data](https://www.kaggle.com/datasets/martinellis/nhl-game-data?select=table_relationships.JPG)\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## Workflow\n",
-    "\n",
-    "1. **Data Cleaning (Silver Layer)**  \n",
-    "   - Performed using PySpark on lakehouse data.  \n",
-    "   - Cleaned raw game and player data, handled missing values and duplicates.  \n",
-    "\n",
-    "2. **Team DNA Profiles & Archetypes (Gold Layer)**  \n",
-    "   - Used Spark SQL to create dimension and fact tables.  \n",
-    "   - Computed metrics for each team and assigned archetypes.  \n",
-    "   - Designed star schema for analytics-ready tables.  \n",
-    "\n",
-    "3. **Visualization**  \n",
-    "   - Power BI dashboards visualize how team styles shift over seasons.  \n",
-    "   - Interactive slicers allow exploration by team, season, and archetype.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## What I Learned\n",
-    "\n",
-    "- Categorizing sports teams based on performance metrics and tracking evolution over multiple seasons.  \n",
-    "- Practical experience with **PySpark and Spark SQL** for structured data transformations.  \n",
-    "- Designing a **medallion architecture** (Bronze, Silver, Gold layers) for analytics pipelines.  \n",
-    "- Using **Microsoft Fabric Lakehouse** to manage raw data.  \n",
-    "- Creating **interactive dashboards** to communicate insights visually.  \n",
-    "\n",
-    "---\n",
-    "\n",
-    "## How to Run\n",
-    "\n",
-    "1. Clone this repository:\n",
-    "\n",
-    "```bash\n",
-    "git clone https://github.com/Yuyun-Kong/NHL_Pipeline.git\n",
-    "```\n",
-    "\n",
-    "2.  Download the datasets from the Kaggle link above (optional if you want to replicate analysis locally).\n",
-    "\n",
-    "3.  Open the notebooks in Jupyter Lab or Jupyter Notebook in the following order:\n",
-    "\n",
-    "    01_silver_layer_data_cleaning_pyspark.ipynb\n",
-    "\n",
-    "    02_gold_layer_table_creation_sparksql.ipynb\n",
-    "\n",
-    "4.  Power BI dashboards are available as screenshots in reports/.\n"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "15e0a7ae-4e7b-40c6-8bef-6ec898ec99fa",
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python [conda env:base] *",
-   "language": "python",
-   "name": "conda-base-py"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.13.5"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+# NHL Pipeline Project
+
+## Overview
+
+This project transforms raw National Hockey League (NHL) game data into Team DNA Profiles — data-driven representations of how teams play and evolve across seasons.
+
+By integrating multiple datasets, the project identifies distinct Team Archetypes:
+- Attackers
+- Defenders
+- Strategists
+- Balancers
+
+These archetypes are defined using key performance metrics such as efficiency, defense, and aggressiveness.
+
+The outcome is an interactive visualization that highlights how team styles shift over time and how different archetypes influence success.
+
+Data was consolidated, cleaned, and modeled using Microsoft Fabric and the Medallion architecture, demonstrating skills in data pipeline design, ETL, and data modeling.
+
+## Project Structure
+```
+NHL_Pipeline/
+├── notebooks/
+│   ├── 01_silver_layer_data_cleaning_pyspark.ipynb
+│   ├── 02_gold_layer_table_creation_sparksql.ipynb
+├── docs/
+│   └── project_documentation.pdf
+├── reports/
+│   └── powerbi_dashboard_screenshots/
+│       └── Power BI report.pdf
+└── README.md
+```
+- ```notebooks/``` – Jupyter notebooks for Silver layer cleaning and Gold layer table creation.
+- ```docs/``` – Detailed project documentation.
+- ```reports/``` – Power BI screenshots showcasing team archetypes and season trends.
+
+## Datasets
+- Raw datasets were manually uploaded to Microsoft Fabric Lakehouse.
+- Due to large size, they are not included in this repository.
+- They can be downloaded from Kaggle: [NHL Game Data](https://www.kaggle.com/datasets/martinellis/nhl-game-data?select=table_relationships.JPG).
+
+## Workflow
+### 1. Data Cleaning (Silver Layer)
+- Performed using PySpark on lakehouse data.
+- Cleaned raw game and player data, handled missing values and duplicates.
+
+### 2. Team DNA Profiles & Archetypes (Gold Layer)
+- Used Spark SQL to create dimension and fact tables.
+- Computed metrics for each team and assigned archetypes.
+- Designed star schema for analytics-ready tables.
+
+### 3. Visualization
+- Power BI dashboards visualize how team styles shift over seasons.
+- Interactive slicers allow exploration by team, season, and archetype.
+
+## What I Learned
+- Categorizing sports teams based on performance metrics and tracking evolution over multiple seasons.
+- Practical experience with PySpark and Spark SQL for structured data transformations.
+- Designing a medallion architecture (Bronze, Silver, Gold layers) for analytics pipelines.
+- Using Microsoft Fabric Lakehouse to manage raw data.
+- Creating interactive dashboards to communicate insights visually.
+
+## How to Run
+1. Clone this repository
+   ```bash
+      git clone https://github.com/Yuyun-Kong/NHL_Pipeline.git
+   ```
+2. Download the datasets from the Kaggle link above (optional if you want to replicate analysis locally).
+3. Open the notebooks in Jupyter Lab or Jupyter Notebook in the following order:
+   ```text
+      01_silver_layer_data_cleaning_pyspark.ipynb
+      02_gold_layer_table_creation_sparksql.ipynb
+   ```
+4. View Power BI dashboards (screenshots available in ```reports/```).
